@@ -1,0 +1,28 @@
+1.配置git
+1）配置用户名/邮箱
+git config -global user.name "用户名"
+git config -global usrr.email "邮箱"
+2）生成密钥
+ssh-keygen -t ras -C "邮箱名"
+==>输入完上述命令后一直摁回车，会生成公钥id-rsa.pub文件
+3）将id-rsa.pub文件内容拷贝到github->setting->SSH and GPG keys
+
+
+2.git远端仓库与本地仓库管理
+
+1)创建新项目：没有本地项目和远端项目
+登录GitHub，创建新仓库，记录下ssh地址和http地址
+2)托管本地项目：有本地项目
+初始化本地项目：git init
+添加项目： git remote add origin <项目ssh地址>
+Done.
+3）克隆已有项目
+git clone <项目ssh地址>
+
+==代码提交
+git push origin master
+git pull origin master
+
+=>如果git push / git pull 不能直接用时：
+git branch --set -upstream master origin master (本地仓库和远端仓库关联)
+
